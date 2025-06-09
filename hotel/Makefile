@@ -4,4 +4,4 @@ update:
 
 
 run:
-	uvicorn hotel.app.main:app --reload
+	uvicorn app.main:app --reload

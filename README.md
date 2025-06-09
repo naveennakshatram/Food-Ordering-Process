@@ -12,6 +12,46 @@ This project implements a simple cloud-native microservices-based food ordering 
 * **Hotel Service**: Receives orders from the client, processes food preparation, and notifies the delivery service.
 * **Delivery Service**: Handles food pickup and delivery to the user once the order is ready.
 
+| Service      | Role                                                                 |
+| ------------ | -------------------------------------------------------------------- |
+| **Client**   | Browses menu, places order, tracks delivery, and gives hotel ratings |
+| **Hotel**    | Manages menus, accepts/declines orders, prepares food                |
+| **Delivery** | Assigns delivery boys, tracks delivery status                        |
+
+## 🧑‍🤝‍🧑 Entities:
+2 Clients
+
+2 Hotels (with individual menus)
+
+2 Delivery Boys
+
+## 🌐 Communication Flow
+Client -> Hotel -> Delivery -> Client (Rating)
+
+## 📦 Architecture
+                       ┌────────────────────┐
+                       │     Istio Ingress  │
+                       │   (Gateway + VS)   │
+                       └─────────┬──────────┘
+                                 │
+                ┌──────────────────────────────────────┐
+                │                                      │
+       ┌────────▼────────┐                   ┌────────▼────────┐
+       │  client-svc     │───►Order────────►│   hotel-svc      │
+       │  (FastAPI)      │◄──Track & Rate───│   (Flask)        │
+       └──────┬──────────┘                   └────────┬────────┘
+              │                                        │
+              │                                        │
+              ▼                                        ▼
+     ┌─────────────┐                          ┌─────────────┐
+     │ delivery-svc│◄──────Dispatch Order────▶│ Assign Rider│
+     │  (FastAPI)  │                          └─────────────┘
+     └─────────────┘
+ 
+
+
+
+
 ## ⚙️ Tech Stack
 
 * **Language**: Python (FastAPI for Client & Delivery, Flask for Hotel)

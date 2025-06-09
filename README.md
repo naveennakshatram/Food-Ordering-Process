@@ -99,3 +99,11 @@ http://<your-domain-or-ip>/order
 2. Hotel processes and calls Delivery.
 3. Delivery service confirms the order is en route.
 
+
+# ✅ Microservices Status
+
+| Microservice | Port | Status |
+| ------------ | ---- | ------ |
+| Client       | 8001 | ✅ Done |
+| Hotel        | 8002 | ✅ Done |
+| Delivery     | 8003 | ✅ Done |

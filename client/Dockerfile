@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 8001
 
 # Start the FastAPI server (adjust host/port if needed)
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001"]

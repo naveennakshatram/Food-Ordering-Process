@@ -65,7 +65,7 @@ Each service is containerized using Docker and deployed via Kubernetes manifests
 
 ## 📂 Folder Structure
 
-![Folder Structure](Readme_files/folder_structure.png)
+![Folder Structure](Readme-images/FolderStructure.png)
 
 ## 📦 How to Run
 

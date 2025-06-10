@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.models import Order
 from app.delivery_data import delivery_boys, deliveries
 import random
+import uuid
 
 app = FastAPI()
 
@@ -39,3 +40,10 @@ def mark_delivered(order_id: str):
         deliveries[order_id]["status"] = "Delivered"
         return {"message": "Order marked as delivered"}
     return {"message": "Order not found"}
+
+
+@app.post("/deliver")
+async def deliver_order(order: Order):
+    order_id = str(uuid.uuid4())  # Generate a unique ID for this order
+    # your delivery logic here
+    return {"status": "Delivery started", "order_id": order_id}

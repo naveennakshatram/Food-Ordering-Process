@@ -65,23 +65,7 @@ Each service is containerized using Docker and deployed via Kubernetes manifests
 
 ## 📂 Folder Structure
 
-```
-.
-├── client/
-│   └── app.py
-├── hotel/
-│   └── app.py
-├── delivery/
-│   └── app.py
-├── k8s/
-│   ├── client-deployment.yaml
-│   ├── hotel-deployment.yaml
-│   ├── delivery-deployment.yaml
-│   ├── ingress.yaml
-│   └── services.yaml
-├── README.md
-└── requirements.txt
-```
+![Folder Structure](Readme_files/folder_structure.png)
 
 ## 📦 How to Run
 

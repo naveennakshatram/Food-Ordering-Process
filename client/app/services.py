@@ -1,7 +1,7 @@
 import httpx
 
-HOTEL_SERVICE_URL = "http://hotel:5001"
-DELIVERY_SERVICE_URL = "http://delivery:5002"
+HOTEL_SERVICE_URL = "http://0.0.0.0:8002"
+DELIVERY_SERVICE_URL = "http://0.0.0.0:8003"
 
 async def fetch_hotels():
     async with httpx.AsyncClient() as client:
